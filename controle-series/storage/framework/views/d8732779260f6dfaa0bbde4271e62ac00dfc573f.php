@@ -7,11 +7,11 @@
 <?php $attributes = $attributes->except(collect($constructor->getParameters())->map->getName()->all()); ?>
 <?php endif; ?>
 <?php $component->withAttributes(['title' => 'Séries']); ?>
-    <a href="/series/criar">Adicionar</a>
-    <ul>
+    <a href="/series/criar" class="btn btn-dark mb-2">Adicionar</a>
+    <ul class="list-group">
 
         <?php $__currentLoopData = $series; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $serie): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <li><?php echo e($serie); ?> </li>
+            <li class="list-group-item"><?php echo e($serie->nome); ?> </li>
         |<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </ul>
  <?php echo $__env->renderComponent(); ?>

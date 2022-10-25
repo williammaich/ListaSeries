@@ -7,10 +7,15 @@
 <?php $attributes = $attributes->except(collect($constructor->getParameters())->map->getName()->all()); ?>
 <?php endif; ?>
 <?php $component->withAttributes(['title' => 'Nova Série']); ?>
-    <form action="" method="post">
-    <label for="nome">Nome:</label>
-    <input type="text" id="nome" name="nome">
-    </form>
+    <form action="/series/salvar" method="post">
+       <?php echo csrf_field(); ?>
+        <div class="mb-3">
+    <label for="nome" class="form-label">Nome:</label>
+    <input type="text" id="nome" name="nome" class="form-control">
+</div>
+
+<button type="submit" class="btn btn-primary"->Adicionar</button>
+</form>
  <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4)): ?>
